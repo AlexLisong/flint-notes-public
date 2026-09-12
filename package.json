@@ -27,7 +27,7 @@
     "cookie-parser": "^1.4.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "lucide-react": "^0.468.0",
+    "lucide-react": "^1.43.0",
     "idb": "^8.0.3",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
