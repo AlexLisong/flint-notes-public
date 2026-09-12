@@ -1,0 +1,25 @@
+node_modules/
+dist/
+dist-server/
+dist-bridge/
+.data/
+.env
+*.db*
+.DS_Store
+coverage/
+__pycache__/
+*.pyc
+
+# Private configuration, credentials and diagnostic artifacts
+.env*
+!.env.example
+*.key
+*.p12
+*.pfx
+*.pem
+*.sqlite*
+*.log
+/playwright-report/
+/test-results/
+/scripts/aws/config.json
+/scripts/aws/deployment.json

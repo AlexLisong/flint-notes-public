@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible problem in Flint.
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities, follow SECURITY.md. Use synthetic data and remove credentials, personal content, hostnames and account identifiers from logs."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: A minimal example using disposable data.
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Revision or version
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, operating system, browser, and runtime mode. No deployment identifiers are needed.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized logs or screenshots

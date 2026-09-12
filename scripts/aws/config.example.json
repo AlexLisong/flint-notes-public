@@ -1,0 +1,11 @@
+{
+  "profile": "your-profile",
+  "region": "us-west-2",
+  "account": "000000000000",
+  "instance": "i-00000000000000000",
+  "hostname": "flint.example.com",
+  "sshUser": "ubuntu",
+  "bucket": "your-unique-private-backup-bucket",
+  "instanceProfile": "your-instance-profile",
+  "role": "your-backup-role"
+}

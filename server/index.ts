@@ -1,0 +1,11 @@
+import {resolve} from 'node:path';
+import {createApp} from './app';
+const port=Number(process.env.PORT||4317),host=process.env.HOST||'127.0.0.1';
+const production=process.env.NODE_ENV==='production';
+const origin=process.env.APP_ORIGIN||(production?'':'http://127.0.0.1:5191');
+if(!origin||production&&!origin.startsWith('https://'))throw new Error('APP_ORIGIN must be an exact HTTPS origin in production.');
+if(new URL(origin).origin!==origin)throw new Error('APP_ORIGIN must be an exact origin.');
+const {app,db,maintenance}=createApp({dataDir:resolve(process.env.FLINT_DATA_DIR||'.data/local'),origin,bootstrapCode:process.env.FLINT_BOOTSTRAP_CODE||(!production?'flint-local-development':''),production,staticDir:resolve('dist')});
+maintenance();setInterval(()=>{try{maintenance();}catch(e){console.error('maintenance.failed',e instanceof Error?e.name:'Error');}},3600_000).unref();
+const server=app.listen(port,host,()=>console.log(`Flint listening on http://${host}:${port}`));
+for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>server.close(()=>{db.close();process.exit(0);}));
